@@ -4,9 +4,8 @@ import time
 
 
 def create_table():
-    conn = sqlite3.connect('habits.db')  # Подключение к базе данных
+    conn = sqlite3.connect('habits.db')
     c = conn.cursor()
-    # Создание таблицы
     c.execute('''
         CREATE TABLE IF NOT EXISTS user_notify (
             user_id INTEGER,
@@ -15,8 +14,8 @@ def create_table():
             message TEXT
         )
     ''')
-    conn.commit()  # Сохранение изменений
-    conn.close()  # Закрытие подключения
+    conn.commit()
+    conn.close()
 
 create_table()
 def add_reminder(user_id, habit_id, time, message):

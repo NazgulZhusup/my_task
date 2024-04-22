@@ -3,7 +3,6 @@ import sqlite3
 def create_tables():
     conn = sqlite3.connect('habits.db')
     c = conn.cursor()
-    # Создание таблицы user_habit для хранения привычек пользователей
     c.execute('''
         CREATE TABLE IF NOT EXISTS user_habit (
             user_id INTEGER,
@@ -12,7 +11,7 @@ def create_tables():
             habit_description TEXT
         )
     ''')
-    # Создание таблицы history для хранения истории выполнения привычек
+    
     c.execute('''
         CREATE TABLE IF NOT EXISTS history (
             user_id INTEGER,
